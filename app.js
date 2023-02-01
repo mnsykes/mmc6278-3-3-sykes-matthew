@@ -8,7 +8,6 @@ app.use(express.static("public"));
 app.use(express.json());
 
 app.get("/api/city/:city", async (req, res) => {
-	console.log(req.params);
 	try {
 		let jobs = await getJobs(req.params["city"]);
 		let cityInfo = await getCityInfo(req);
